@@ -2,7 +2,6 @@ from app import app
 from flask import render_template, request
 from app.forms import searchForm
 from newsapi import NewsApiClient
-from app import search_handler
 
 newsapi = NewsApiClient(api_key="78b9d599c4f94f8fa3afb1a5458928d6")
 #all routes get their respective news on call and render based on templates
