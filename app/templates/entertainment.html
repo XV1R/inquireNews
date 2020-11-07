@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron card card-image" style="background-image: url(https://images.unsplash.com/photo-1481328101413-1eef25cc76c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
+    <div class="text-white text-center py-5 px-4">
+        <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>Entertainment.</strong></h2>
+    </div>
+</div>
+<div class="card-columns">
+    {% for article in articles %}
+    <div class="col-10 mr-12" >
+        <div class="card border-secondary">
+            <img class="card-img-top"src={{article.urlToImage}} alt={{article.urlToImage}}>
+            <div class="card-body">
+                <h3 class="card-title"><b>{{article.title}}</b></h3>
+                <h5 class="card-subtitle mb-2 text-muted">{{article.publishedAt}}</h5>
+                <h6 class="card-text">{{article.description}}</h6>
+                <a class="btn btn-outline-dark"href={{article.url}}>Source</a>
+
+            </div>
+        </div>
+        
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
